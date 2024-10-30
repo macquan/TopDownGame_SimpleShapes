@@ -7,13 +7,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI winGameText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI hiscoreText;
     public TextMeshProUGUI timerText;
     public Button retryButton;
 
     public GameObject player;
-    private Vector3 playerStartPosition = Vector3.zero;
+    private Vector3 playerStartPosition = new Vector3(-8f, 4.6f, 0f);
 
     private float score;
     private float timer;
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         enabled = true;
         isGameActive = true; 
+        winGameText.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
 
@@ -135,4 +137,17 @@ public class GameManager : MonoBehaviour
 
         hiscoreText.text = "HS: " + Mathf.FloorToInt(hiscore).ToString();
     }
+    public void WinGame()
+    {
+        enabled = false;
+        Time.timeScale = 0f;
+        isGameActive = false;
+
+        winGameText.text = "WIN!!!";
+        winGameText.gameObject.SetActive(true);
+        retryButton.gameObject.SetActive(true);
+
+        UpdateHiscore();
+    }
+
 }

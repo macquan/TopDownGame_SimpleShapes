@@ -60,6 +60,11 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.GameOver();
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("Key"))
+        {
+            print("Win!");
+            GameManager.Instance.WinGame();
+        }
     }
 
 }
