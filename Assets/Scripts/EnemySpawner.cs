@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     private float timeSinceLastSpawn = 0f;
     private float spawnRateIncrease = 0.95f; 
     private float minSpawnInterval = 1f;    
-    public float minSpawnDistance = 3f; 
+    public float minSpawnDistance = 6f; 
 
     private Transform player;       
 

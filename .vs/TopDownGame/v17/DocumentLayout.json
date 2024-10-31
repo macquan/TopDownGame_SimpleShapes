@@ -3,18 +3,6 @@
   "WorkspaceRootPath": "D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\assets\\scripts\\shooting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shooting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\assets\\scripts\\bulletdestroy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bulletdestroy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,7 +11,19 @@
       "RelativeMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|d:\\courses\\2024-1\\game programing\\projects\\topdowngame\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\assets\\scripts\\bulletdestroy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bulletdestroy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|d:\\courses\\2024-1\\game programing\\projects\\topdowngame\\assets\\scripts\\shooting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shooting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E107ACC0-B200-8E64-26B5-F5E3A0BCA3BC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,25 +54,24 @@
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
               "ViewState": "AQIAAIQAAAAAAAAAAAAswJEAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:06:38.712Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T19:06:38.712Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "EnemySpawner.cs",
               "DocumentMoniker": "D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\Assets\\Scripts\\EnemySpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemySpawner.cs",
               "ToolTip": "D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\Assets\\Scripts\\EnemySpawner.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemySpawner.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAUwC4AAABFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-29T18:46:17.723Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Enemy.cs",
               "DocumentMoniker": "D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\Assets\\Scripts\\Enemy.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy.cs",
@@ -98,7 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Shooting.cs",
               "DocumentMoniker": "D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\Assets\\Scripts\\Shooting.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Shooting.cs",
@@ -111,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "D:\\Courses\\2024-1\\Game Programing\\Projects\\TopDownGame\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
@@ -119,8 +118,7 @@
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
               "ViewState": "AQIAADIAAAAAAAAAAAAowEEAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T16:05:35.054Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T16:05:35.054Z"
             }
           ]
         }
