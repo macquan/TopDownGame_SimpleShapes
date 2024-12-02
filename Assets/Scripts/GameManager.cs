@@ -75,7 +75,9 @@ public class GameManager : MonoBehaviour
         });
 
         settingsButton.onClick.AddListener(() => Debug.Log("Settings button is not active."));
-        exitButton.onClick.AddListener(() => Debug.Log("Exit button is not active."));
+
+        exitButton.onClick.AddListener(() => ExitGame());
+
         Button tutorialButton = tutorialPanel.transform.Find("BackButton").GetComponent<Button>();
         tutorialButton.onClick.AddListener(ShowMenu);
 
@@ -271,6 +273,10 @@ public class GameManager : MonoBehaviour
         if (scoreText != null) scoreText.gameObject.SetActive(isActive);
         if (hiscoreText != null) hiscoreText.gameObject.SetActive(isActive);
     }
-
+    private void ExitGame()
+    {
+        Debug.Log("Game is exiting...");
+        Application.Quit();
+    }
 
 }
