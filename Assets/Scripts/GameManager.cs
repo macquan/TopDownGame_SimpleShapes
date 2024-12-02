@@ -12,13 +12,26 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI hiscoreText;
     public TextMeshProUGUI timerText;
     public Button retryButton;
+    public Button mainMenuButton;
+
+    public GameObject menuPanel;
+    public Button startButton;
+    public Button settingsButton;
+    public Button tutorialButton;
+    public Button exitButton;
+
+    public GameObject tutorialPanel;
 
     public GameObject player;
     private Vector3 playerStartPosition = new Vector3(-8f, 4.6f, 0f);
 
     private float score;
     private float timer;
-    private bool isGameActive = false; 
+    private float elapsedTime = 0f;
+    private bool isGameActive = false;
+
+    public int gameSessionId = 0;
+
 
 
     private void Awake()
@@ -49,11 +62,61 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         retryButton.onClick.AddListener(NewGame);
-        NewGame();
+        mainMenuButton.onClick.AddListener(() =>
+        {
+            ShowMenu(); 
+            ResetGame(); 
+        });
+
+        startButton.onClick.AddListener(() =>
+        {
+            HideMenu();
+            NewGame();
+        });
+
+        settingsButton.onClick.AddListener(() => Debug.Log("Settings button is not active."));
+        exitButton.onClick.AddListener(() => Debug.Log("Exit button is not active."));
+        Button tutorialButton = tutorialPanel.transform.Find("BackButton").GetComponent<Button>();
+        tutorialButton.onClick.AddListener(ShowMenu);
+
+        ShowMenu();
+    }
+
+    public void ShowTutorial()
+    {
+        tutorialPanel.SetActive(true);
+        menuPanel.SetActive(false);
+        SetGameUIActive(false);
+        Time.timeScale = 0f;
+    }
+
+    private void ShowMenu()
+    {
+        menuPanel.SetActive(true);
+        tutorialPanel.SetActive(false);
+        retryButton.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
+        winGameText.gameObject.SetActive(false);
+        gameOverText.gameObject.SetActive(false);
+        SetGameUIActive(false);
+        Time.timeScale = 0f;
+        isGameActive = false;
+    }
+
+    private void HideMenu()
+    {
+        menuPanel.SetActive(false);
+        Time.timeScale = 1f;
+        isGameActive = true;
     }
 
     public void NewGame()
     {
+        if (!isGameActive)
+        {
+            gameSessionId++;
+        }
+
         score = 0f;
         timer = 0f;
         scoreText.text = "S: " + Mathf.FloorToInt(score).ToString(); 
@@ -64,6 +127,8 @@ public class GameManager : MonoBehaviour
         winGameText.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
+        SetGameUIActive(true);
 
         GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
         foreach (GameObject bullet in bullets)
@@ -101,8 +166,11 @@ public class GameManager : MonoBehaviour
 
         gameOverText.gameObject.SetActive(true);
         retryButton.gameObject.SetActive(true);
+        mainMenuButton.gameObject.SetActive(true);
 
         UpdateHiscore();
+
+        Debug.Log("Lose");
     }
 
     private void Update()
@@ -114,16 +182,23 @@ public class GameManager : MonoBehaviour
 
             scoreText.text = "S: " + Mathf.FloorToInt(score).ToString();
         }
+        elapsedTime += Time.deltaTime;
+        if (elapsedTime >= 5f)
+        {
+            Debug.Log("5 seconds");
+            elapsedTime = 0f;
+        }
     }
 
-    public void IncreaseScore()
+    public void IncreaseScore(int enemySessionId)
     {
-        if (isGameActive)
+        if (isGameActive && enemySessionId == gameSessionId)
         {
             score += 1;
             scoreText.text = "S: " + Mathf.FloorToInt(score).ToString();
         }
     }
+
 
     private void UpdateHiscore()
     {
@@ -146,8 +221,56 @@ public class GameManager : MonoBehaviour
         winGameText.text = "WIN!!!";
         winGameText.gameObject.SetActive(true);
         retryButton.gameObject.SetActive(true);
+        mainMenuButton.gameObject.SetActive(true);
+        Debug.Log("Win");
 
         UpdateHiscore();
     }
+
+    private void ResetGame()
+    {
+        score = 0f;
+        timer = 0f;
+        elapsedTime = 0f;
+        isGameActive = false;
+
+        if (player != null)
+        {
+            player.transform.position = playerStartPosition;
+
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = Vector2.zero;
+                rb.angularVelocity = 0f;
+            }
+        }
+
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+        foreach (GameObject bullet in bullets)
+        {
+            Destroy(bullet);
+        }
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+
+        retryButton.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
+        winGameText.gameObject.SetActive(false);
+        gameOverText.gameObject.SetActive(false);
+
+        Time.timeScale = 0f;
+    }
+    private void SetGameUIActive(bool isActive)
+    {
+        if (timerText != null) timerText.gameObject.SetActive(isActive);
+        if (scoreText != null) scoreText.gameObject.SetActive(isActive);
+        if (hiscoreText != null) hiscoreText.gameObject.SetActive(isActive);
+    }
+
 
 }

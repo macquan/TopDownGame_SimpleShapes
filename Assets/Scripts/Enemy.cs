@@ -6,10 +6,12 @@ public class Enemy : MonoBehaviour
 {
     public float speed = 2.0f;  
     private Transform player;
+    public int sessionId;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        sessionId = GameManager.Instance != null ? GameManager.Instance.gameSessionId : -1;
     }
 
     void Update()
@@ -24,7 +26,7 @@ public class Enemy : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.IncreaseScore();
+            GameManager.Instance.IncreaseScore(sessionId);
         }
     }
 }
